@@ -1,0 +1,26 @@
+<a href="/steer/attendancePre" class="grid">
+    <span>员工管理</span>
+</a>
+<a href="/steer/steerMConfirm" class="grid">
+    <span>销量确认</span>
+</a>
+<a href="/common/infoMCourseInit" class="grid">
+    <span>培训课程</span>
+</a>
+<a href="/steer/steerMCheck" class="grid">
+    <span>销量查询</span>
+</a>
+<a href="/common/infoMSendInit" class="grid">
+    <span>最新通知</span>
+</a>
+<a href="/steer/steerMOutWarn" class="grid">
+    <span>断货警报</span>
+</a>
+微信企业号：
+1787186939@qq.com，
+0987yangqi
+V  23:36:56
+allen.yangqi@gmail.com
+0987yangqi
+
+insert into Userinfo(Name, StoreId, Contact, Status, Password, SuperiorId, UserType) values('', , '', 1, , , 1);

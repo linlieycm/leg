@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="promoter" namespace="/promoter" extends="struts-default">
+
+        <!--微打卡-->
+        <action name="attendancePre" class="org.leg.siteweb.page.promoter.AttendanceAction" method="init">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/staffMCenter.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="attendance" class="org.leg.siteweb.page.promoter.AttendanceAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/staffMCenter.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+            <action name="attendanceMenu" class="org.leg.siteweb.page.promoter.AttendanceMenuAction">
+            <result name="ftl" type="freemarker">/WEB-INF/pages/promoter/staffMForm.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--考勤查询-->
+        <action name="attendanceQuery" class="org.leg.siteweb.page.promoter.AttendanceQueryAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/staffMRecordsDetail.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--上岗报表-->
+        <action name="salesMUpReport" class="org.leg.siteweb.page.promoter.SalesMUpReportAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/salesMUpReport.ftl</result>
+            <result name="SHOWHISTORY" type="freemarker">/WEB-INF/pages/promoter/salesMUpReportShow.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="salesMUpInsert" class="org.leg.siteweb.page.promoter.SalesMUpReportInsertAction">
+            <result name="SHOWHISTORY" type="freemarker">/WEB-INF/pages/promoter/salesMUpReportShow.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+
+        </action>
+
+        <!--离岗报表-->
+        <action name="salesMDownReport" class="org.leg.siteweb.page.promoter.SalesMDownReportAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/salesMDownReport.ftl</result>
+            <result name="SHOWHISTORY" type="freemarker">/WEB-INF/pages/promoter/salesMDownReportShow.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="salesMDownInsert" class="org.leg.siteweb.page.promoter.SalesMDownReportInsertAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/staffMCenter.ftl</result>
+            <result name="SHOWHISTORY" type="freemarker">/WEB-INF/pages/promoter/salesMDownReportShow.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--断货报警-->
+        <action name="salesOutReport" class="org.leg.siteweb.page.promoter.SalesOutReportAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/salesMOutReport.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="salesOutReportInsert" class="org.leg.siteweb.page.promoter.SalesOutReportInsertAction" >
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/promoter/salesMOutReport.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+	</package>
+</struts>

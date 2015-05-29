@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="leg" namespace="/" extends="struts-default">
+		<action name="hello" class="org.leg.siteweb.page.HelloAction">
+			<result name="ftl" type="freemarker">/WEB-INF/pages/hello.ftl</result>
+		</action>
+        <action name="login" class="org.leg.siteweb.page.LoginAction" method="loginPre">
+            <result name="ftl" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="loginIn" class="org.leg.siteweb.page.LoginAction">
+            <result name="promoterLogin" type="freemarker">/WEB-INF/pages/promoter/staffMCenterMenu.ftl</result>
+            <result name="steerLogin" type="freemarker">/WEB-INF/pages/steer/steerMCenterMenu.ftl</result>
+            <result name="FAIL" type="freemarker">/WEB-INF/pages/login.ftl</result>
+            <result name="redirect" type="redirect">${redirect}</result>
+        </action>
+        <action name="loginEx" class="org.leg.siteweb.page.LoginExAction" method="loginPre">
+            <result name="ftl" type="freemarker">/WEB-INF/pages/loginEx.ftl</result>
+        </action>
+        <action name="loginInEx" class="org.leg.siteweb.page.LoginExAction" method="execute">
+            <result name="promoterLogin" type="freemarker">/WEB-INF/pages/promoter/staffMCenterMenu.ftl</result>
+            <result name="steerLogin" type="freemarker">/WEB-INF/pages/steer/steerMCenterMenu.ftl</result>
+            <result name="FAIL" type="freemarker">/WEB-INF/pages/loginEx.ftl</result>
+            <result name="redirect" type="redirect">${redirect}</result>
+        </action>
+        <action name="hello" class="org.leg.siteweb.page.HelloAction">
+            <result name="ftl" type="freemarker">/WEB-INF/pages/hello.ftl</result>
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">409600</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+
+        <action name="loginAdmin" class="org.leg.siteweb.page.LoginAdminAction" method="loginPre">
+            <result name="ftl" type="freemarker">/WEB-INF/pages/loginAdmin.ftl</result>
+        </action>
+        <action name="loginAdminIn" class="org.leg.siteweb.page.LoginAdminAction">
+            <result name="adminLogin" type="freemarker">/WEB-INF/pages/admin/staffMPromoter.ftl</result>
+            <result name="steerLogin" type="freemarker">/WEB-INF/pages/admin/salesMSalesQuerySub.ftl</result>
+            <result name="FAIL" type="freemarker">/WEB-INF/pages/loginAdmin.ftl</result>
+        </action>
+        <action name="staffSalesMSaleDownSubPre" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="downloadPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesQuerySub.ftl</result>
+        </action>
+        <action name="staffSalesMSaleDownQuerySub" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="downQuery">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesQuerySub.ftl</result>
+        </action>
+        <action name="staffSalesMSaleDownSub" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+	</package>
+</struts>

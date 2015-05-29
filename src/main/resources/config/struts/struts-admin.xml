@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="hello" class="org.leg.siteweb.page.HelloAction">
+			<result name="ftl" type="freemarker">/WEB-INF/pages/hello.ftl</result>
+		</action>
+
+        <!--促销员管理-->
+        <action name="staffMPromoter" class="org.leg.siteweb.page.admin.StaffMPromoterAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoter.ftl</result>
+        </action>
+        <action name="staffMPromoterQuery" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="doQuery">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoter.ftl</result>
+        </action>
+        <action name="staffMPromoterAgreeUser" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="agreeUser">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoter.ftl</result>
+        </action>
+        <action name="staffMPromoterRefuseUser" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="refuseUser">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoter.ftl</result>
+        </action>
+        <action name="addSalesMPromoterPre" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="addPromoterPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoterInsert.ftl</result>
+        </action>
+        <action name="addSalesMPromoter" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="addPromoter">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoterInsert.ftl</result>
+        </action>
+        <action name="addSalesMPromoterTwo" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="addPromoterTwo">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMPromoter.ftl</result>
+        </action>
+
+        <!--督导管理-->
+        <action name="salesMObserver" class="org.leg.siteweb.page.admin.SalesMObserverAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserver.ftl</result>
+        </action>
+        <action name="salesMObserverQuery" class="org.leg.siteweb.page.admin.SalesMObserverAction" method="queryObserver">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserver.ftl</result>
+        </action>
+        <action name="addSalesMObserverPre" class="org.leg.siteweb.page.admin.SalesMObserverAction" method="addObserverPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserverInsert.ftl</result>
+        </action>
+        <action name="addSalesMObserver" class="org.leg.siteweb.page.admin.SalesMObserverAction" method="addObserver">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserver.ftl</result>
+        </action>
+        <action name="delSalesMObserver" class="org.leg.siteweb.page.admin.SalesMObserverAction" method="delObserver">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserver.ftl</result>
+        </action>
+        <!--<action name="updSalesMObserverPre" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="updateObserverPre">-->
+            <!--<result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserverUpdate.ftl</result>-->
+        <!--</action>-->
+        <!--<action name="updSalesMObserver" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="updateObserver">-->
+            <!--<result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMObserver.ftl</result>-->
+        <!--</action>-->
+        <action name="staffMObserverDown" class="org.leg.siteweb.page.admin.StaffMPromoterAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+        <!--考勤报表-->
+        <action name="staffMCheckingInit" class="org.leg.siteweb.page.admin.StaffMCheckingAction" method="init">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMChecking.ftl</result>
+        </action>
+        <action name="staffMCheckingQuery" class="org.leg.siteweb.page.admin.StaffMCheckingAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMChecking.ftl</result>
+        </action>
+        <action name="staffMCheckingDown" class="org.leg.siteweb.page.admin.StaffMCheckingAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+        <!--巡店报表-->
+        <action name="staffMRoundInit" class="org.leg.siteweb.page.admin.StaffMRoundAction" method="init">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMRound.ftl</result>
+        </action>
+        <action name="staffMRoundQuery" class="org.leg.siteweb.page.admin.StaffMRoundAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/staffMRound.ftl</result>
+        </action>
+        <action name="staffMRoundDown" class="org.leg.siteweb.page.admin.StaffMRoundAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+        <!--员工名单-->
+
+
+        <!--课程管理-->
+        <action name="infoMCourseInit" class="org.leg.siteweb.page.admin.InfoMCourseAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMCourse.ftl</result>
+        </action>
+        <action name="infoMCourseManage" class="org.leg.siteweb.page.admin.InfoMCourseAction" method="manage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMCourseManager.ftl</result>
+        </action>
+        <action name="infoMCourseDel" class="org.leg.siteweb.page.admin.InfoMCourseAction" method="delMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMCourseManager.ftl</result>
+        </action>
+        <action name="infoMCourseAddPre" class="org.leg.siteweb.page.admin.InfoMCourseAction" method="addPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMCourseAdd.ftl</result>
+        </action>
+        <action name="infoMCourseAdd" class="org.leg.siteweb.page.admin.InfoMCourseAction" method="addMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMCourseManager.ftl</result>
+        </action>
+
+        <!--发布通知-->
+        <action name="infoMSendInit" class="org.leg.siteweb.page.admin.InfoMSendAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMSend.ftl</result>
+        </action>
+        <action name="infoMSendCheck" class="org.leg.siteweb.page.admin.InfoMSendAction" method="checkMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMSendManager.ftl</result>
+        </action>
+        <action name="infoMSendDel" class="org.leg.siteweb.page.admin.InfoMSendAction" method="delMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMSend.ftl</result>
+        </action>
+        <action name="infoMSendAddPre" class="org.leg.siteweb.page.admin.InfoMSendAction" method="addPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMSendAdd.ftl</result>
+        </action>
+        <action name="infoMSendAdd" class="org.leg.siteweb.page.admin.InfoMSendAction" method="addMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/infoMSend.ftl</result>
+        </action>
+
+        <!--门店管理-->
+        <action name="salesMStore" class="org.leg.siteweb.page.admin.SalesMStoreAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMStore.ftl</result>
+        </action>
+        <action name="salesMStoreDown" class="org.leg.siteweb.page.admin.SalesMStoreAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        <action name="addSalesMStorePre" class="org.leg.siteweb.page.admin.SalesMStoreAction" method="addStorePre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMStoreInsert.ftl</result>
+        </action>
+        <action name="addSalesMStore" class="org.leg.siteweb.page.admin.SalesMStoreAction" method="addStore">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMStore.ftl</result>
+        </action>
+        <action name="delSalesMStore" class="org.leg.siteweb.page.admin.SalesMStoreAction" method="delMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMStore.ftl</result>
+        </action>
+        <action name="updSalesMStorePre" class="org.leg.siteweb.page.admin.SalesMStoreAction" method="updateStorePre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMStoreUpdate.ftl</result>
+        </action>
+        <action name="updSalesMStore" class="org.leg.siteweb.page.admin.SalesMStoreAction" method="updateStore">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMStore.ftl</result>
+        </action>
+
+
+        <!--赠品管理&报表-->
+        <action name="salesMGift" class="org.leg.siteweb.page.admin.SalesMGiftAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGift.ftl</result>
+        </action>
+        <action name="infoMGiftCheck" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="checkMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGiftUpdate.ftl</result>
+        </action>
+        <action name="addSalesMGiftPre" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="addGiftPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGiftInsert.ftl</result>
+        </action>
+        <action name="addSalesMGift" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="addGift">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGift.ftl</result>
+        </action>
+        <action name="delSalesMGift" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="delMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGift.ftl</result>
+        </action>
+        <action name="updSalesMGiftPre" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="updateGiftPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGiftUpdate.ftl</result>
+        </action>
+        <action name="updSalesMGift" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="updateGift">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGift.ftl</result>
+        </action>
+        <action name="staffSalesMGiftDownPre" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="downloadPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGiftQuery.ftl</result>
+        </action>
+        <action name="staffSalesMGiftDownQuery" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="downQuery">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMGiftQuery.ftl</result>
+        </action>
+        <action name="staffSalesMGiftDown" class="org.leg.siteweb.page.admin.SalesMGiftAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+
+        <!--销量管理&报表-->
+        <action name="salesMSale" class="org.leg.siteweb.page.admin.SalesMSaleAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSales.ftl</result>
+        </action>
+        <action name="infoMSalesCheck" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="checkMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesUpdate.ftl</result>
+        </action>
+        <action name="addSalesMSalePre" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="addGiftPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesInsert.ftl</result>
+        </action>
+        <action name="addSalesMSale" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="addGift">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSales.ftl</result>
+        </action>
+        <action name="delSalesMSale" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="delMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSales.ftl</result>
+        </action>
+        <action name="updSalesMSalePre" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="updateGiftPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesUpdate.ftl</result>
+        </action>
+        <action name="updSalesMSale" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="updateGift">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSales.ftl</result>
+        </action>
+        <action name="staffSalesMSaleDownPre" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="downloadPre">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesQuery.ftl</result>
+        </action>
+        <action name="staffSalesMSaleDownQuery" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="downQuery">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/admin/salesMSalesQuery.ftl</result>
+        </action>
+        <action name="staffSalesMSaleDown" class="org.leg.siteweb.page.admin.SalesMSaleAction" method="download">
+            <result name="SUCCESS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">data</param>
+                <param name="contentDisposition">filename=data.xls</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+
+	</package>
+</struts>

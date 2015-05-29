@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<storage>
+	<!--<db type="mysql" ip="127.0.0.1" port="3306" name="test" />-->
+	<!--<user name="root" password="12345678" />-->
+	<!--<config autoreconnect="true" initialpoolsize="2" maxPoolSize="5" minPoolSize="1" maxStatements="10" maxIdleTime="10" />-->
+    <!--<image path="/Users/myj/Documents/work/apache-tomcat-7/apache-tomcat-7.0.52/webapps/ROOT/image/" />-->
+    <!--<image path="/Users/myj/Downloads/leg/leg/src/main/webapp/image/" />-->
+
+    <db type="mysql" ip="123.57.213.205" port="3306" name="test" />
+    <user name="root" password="Asdf4321" />
+    <config autoreconnect="true" initialpoolsize="2" maxPoolSize="5" minPoolSize="1" maxStatements="10" maxIdleTime="10" />
+    <image path="/usr/local/tomcat/webapps/ROOT/image/" />
+
+    <!--<db type="mysql" ip="10.0.16.16" port="4066" name="meiyejun_mysql_1epkwekp" />-->
+    <!--<user name="Q62JiBQY" password="s8k4mtZSOeAJ" />-->
+    <!--<config autoreconnect="true" initialpoolsize="2" maxPoolSize="5" minPoolSize="1" maxStatements="10" maxIdleTime="10" />-->
+
+
+</storage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="common" namespace="/common" extends="struts-default">
+		<action name="hello" class="org.leg.siteweb.page.HelloAction">
+			<result name="ftl" type="freemarker">/WEB-INF/pages/hello.ftl</result>
+		</action>
+
+        <!--课程-->
+        <action name="infoMCourseInit" class="org.leg.siteweb.page.admin.InfoMCourseAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/common/infoMCourse.ftl</result>
+        </action>
+
+        <!--通知-->
+        <action name="infoMSendInit" class="org.leg.siteweb.page.InfoMCommonAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/common/infoMSend.ftl</result>
+        </action>
+        <action name="infoMSendCheck" class="org.leg.siteweb.page.InfoMCommonAction" method="checkMessage">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/common/infoMSendManager.ftl</result>
+        </action>
+
+	</package>
+</struts>

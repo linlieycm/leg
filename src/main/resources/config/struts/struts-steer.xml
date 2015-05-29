@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="steer" namespace="/steer" extends="struts-default">
+        <!--员工中心-->
+        <action name="attendancePre" class="org.leg.siteweb.page.steer.AttendanceAction" method="init">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMCenter.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="attendance" class="org.leg.siteweb.page.steer.AttendanceAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMCenter.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--考勤-->
+        <action name="attendanceMenu" class="org.leg.siteweb.page.steer.AttendanceMenuAction">
+            <result name="ftl" type="freemarker">/WEB-INF/pages/steer/steerMForm.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="attendanceQuery" class="org.leg.siteweb.page.steer.AttendanceQueryPreAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMRecordsDetail.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--人员信息调整-->
+        <action name="steerMInfoAdjust" class="org.leg.siteweb.page.steer.SteerMInfoAdjustAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMInfoAdjust.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--员工变更-->
+        <action name="steerMInfoChange" class="org.leg.siteweb.page.steer.SteerMInfoChangeAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMInfoChange.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMInfoChangeEdit" class="org.leg.siteweb.page.steer.SteerMInfoChangeEditAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMInfoChangeEdit.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMInfoUpdate" class="org.leg.siteweb.page.steer.SteerMInfoUpdateAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMInfoAdjust.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMInfoQuit" class="org.leg.siteweb.page.steer.SteerMInfoQuitAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMInfoAdjust.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+
+        <!--员工评价-->
+        <action name="steerMAssessment" class="org.leg.siteweb.page.steer.SteerMAssessmentAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMAssessment.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--员工新增-->
+        <action name="steerMAddStaff" class="org.leg.siteweb.page.steer.SteerMAddStaffAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMAddStaff.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMAddStaffDo" class="org.leg.siteweb.page.steer.SteerMAddStaffAction" method="doInsert">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMInfoAdjust.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--巡店-->
+        <action name="roundNewReport" class="org.leg.siteweb.page.steer.RoundNewReportAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/roundNewReport.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="roundNewReportDo" class="org.leg.siteweb.page.steer.RoundNewReportAction" method="doInsert">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/roundNewReport.ftl</result>
+            <result name="SHOWHISTORY" type="freemarker">/WEB-INF/pages/steer/roundOldReport.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="roundOldReport" class="org.leg.siteweb.page.steer.RoundOldReportAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/roundOldReport.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+
+        <!--销量确认-->
+        <action name="steerMConfirm" class="org.leg.siteweb.page.steer.SteerMConfirmAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMConfirm.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMConfirmDetail" class="org.leg.siteweb.page.steer.SteerMConfirmDetailAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMConfirmDetail.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMConfirmUpdate" class="org.leg.siteweb.page.steer.SteerMConfirmDetailAction" method="doUpdate">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMConfirm.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--销量查询-->
+        <action name="steerMCheck" class="org.leg.siteweb.page.steer.SteerMCheckAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMCheck.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMCheckQuery" class="org.leg.siteweb.page.steer.SteerMCheckAction" method="onQuery">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMCheck.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+        <!--断货警报-->
+        <action name="steerMOutWarn" class="org.leg.siteweb.page.steer.SteerMOutWarnAction">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMOutWarn.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMOutWarnDetail" class="org.leg.siteweb.page.steer.SteerMOutWarnAction" method="getOne">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMOutWarnDetail.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+        <action name="steerMOutWarnUpdate" class="org.leg.siteweb.page.steer.SteerMOutWarnAction" method="doUpdate">
+            <result name="SUCCESS" type="freemarker">/WEB-INF/pages/steer/steerMOutWarn.ftl</result>
+            <result name="NOLOGIN" type="freemarker">/WEB-INF/pages/login.ftl</result>
+        </action>
+
+    </package>
+
+</struts>
